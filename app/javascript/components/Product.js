@@ -6,6 +6,7 @@ import ProductNotFound from './ProductNotFound';
 const Product = ({products, onDelete}) => {
   const { id } = useParams();
   var product;
+
   if (products) {
     product = products.find((product) => product.id === Number(id));
   }

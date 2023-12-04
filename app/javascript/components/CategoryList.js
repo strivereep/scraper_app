@@ -15,13 +15,13 @@ const CategoryList = ( {categories, onSave} ) => {
     );
 
   return (
-    <div>
-      <section>
+    <>
+      <div>
         <ProductForm onSave={onSave} />
         <h3>Categories</h3>
         <ul>{renderCategories(categories)}</ul>
-      </section>
-    </div>
+      </div>
+    </>
   )
 };
 

@@ -14,11 +14,11 @@ const ProductList = ({ products, categoryId }) => {
       ));
 
   return (
-    <div>
-      <section>
+    <>
+      <div>
         <ul>{renderProducts(products, categoryId)}</ul>
-      </section>
-    </div>
+      </div>
+    </>
   )
 }
 

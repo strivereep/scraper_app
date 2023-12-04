@@ -61,10 +61,7 @@ const Category = ({ categories }) => {
       <ProductList products={category.products || []} categoryId={category.id} />
       <Routes>
         <Route path="products/:id" element={<Product products={category.products} onDelete={deleteProduct}/>} />
-        <Route
-          path="products/:id/edit"
-          element={<ProductForm products={category.products || []} onSave={updateProduct} />}
-        />
+        <Route path="products/:id/edit" element={<ProductForm products={category.products || []} onSave={updateProduct} />} />
       </Routes>
     </div>
   )
