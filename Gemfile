@@ -52,7 +52,11 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# A simple HTTP and REST client for Ruby, inspired by the Sinatra's microframework style of specifying actions: get, put, post, delete.
 gem 'rest-client'
+
+# Job scheduler for Ruby (at, cron, in and every jobs).
+gem 'rufus-scheduler'
 
 # Use Sass to process CSS
 # gem "sassc-rails"

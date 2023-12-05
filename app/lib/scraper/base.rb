@@ -13,6 +13,11 @@ module Scraper
 
     def scrape_content_and_save
       scrape
+      # check valid attributes before saving the product
+      # especially while refetching the new data from the same url
+      # sometimes item might be removed or url wont be valid
+      # in that case, use the same old records
+      return unless has_proper_attributes?
       category = Category.find_or_create_by(name: scraped_data[:category])
 
       # avoid duplicates association
@@ -43,6 +48,12 @@ module Scraper
 
     def product_images
       @product_images ||= product.images
+    end
+
+    def has_proper_attributes?
+      return false if scraped_data[:category].blank?
+
+      %i[title description price].any? { |key| scraped_data[key].present? }
     end
   end
 end

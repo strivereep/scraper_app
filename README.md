@@ -21,6 +21,10 @@ A simple web scraper app built using React on Rails with specs, that scrapes the
 - Run `redis-server` -- it will start redis server
 - Run `bundle exec sidekiq` -- it will start the sidekiq for background job processing
 
-## TESTING
+## SPECS
 - `rspec spec/requests/` -- it will run rspec for all the controllers specs
 - `rspec spec/lib/` -- it will run rspec for all the helper specs
+
+## SCHEDULER JOB
+- Enabled the scheduler job, that runs every day after 5 minutes of midnight which fetches the attributes for the products that have been scraped 1 week before.
+- Please note, this scheduler job runs along with the main threads so it only runs if main server i.e. puma is running.
