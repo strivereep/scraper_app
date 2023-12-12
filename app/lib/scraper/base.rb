@@ -55,5 +55,9 @@ module Scraper
 
       %i[title description price].any? { |key| scraped_data[key].present? }
     end
+
+    def scrape
+      raise NotImplementedError
+    end
   end
 end

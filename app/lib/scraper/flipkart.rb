@@ -4,6 +4,8 @@ module Scraper
   class Flipkart < Base
     attr_reader :scraped_data
 
+    private
+
     def scrape
       title = crawler.css('.B_NuCI').text
       category = crawler.css('._2whKao').map(&:text)[1]

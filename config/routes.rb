@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   root to: redirect('/categories')
 
@@ -6,6 +8,8 @@ Rails.application.routes.draw do
   get 'categories/:id', to: 'home#index'
   get 'categories/:id/products/:id', to: 'home#index'
   get 'categories/:id/products/:id/edit', to: 'home#index'
+
+  mount Sidekiq::Web => '/sidekiq'
 
   namespace :api do
     resources :products, only: %i[create update destroy]
