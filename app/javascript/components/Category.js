@@ -48,7 +48,7 @@ const Category = ({ categories }) => {
         if (!response.ok) throw Error(response.statusText);
 
         alert('Product Deleted!');
-        navigate('/categories');
+        navigate(window.location.replace('/categories'));
       } catch(error) {
         alert(error);
       }
