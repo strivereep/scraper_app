@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams, Link, useNavigate, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useParams, useNavigate, Routes, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ProductList from './ProductList';
 import Product from './Product';

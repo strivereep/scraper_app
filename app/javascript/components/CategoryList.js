@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, NavLink, Routes, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import ProductForm from './ProductForm';
 
 const CategoryList = ( {categories, onSave} ) => {
