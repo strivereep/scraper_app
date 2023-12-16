@@ -28,3 +28,9 @@ A simple web scraper app built using React on Rails with specs, that scrapes the
 ## SCHEDULER JOB
 - Enabled the scheduler job, that runs every day after 5 minutes of midnight which fetches the attributes for the products that have been scraped 1 week before.
 - Please note, this scheduler job runs along with the main threads so it only runs if main server i.e. puma is running.
+
+## SIDEKIQ UI
+- `{url}/sidekiq` to see status of all the sidekiq jobs
+
+## SWAGGER API SPECS
+- `{url}/api-docs` to see the swagger api docs

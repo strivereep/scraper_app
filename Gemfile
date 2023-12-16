@@ -58,6 +58,8 @@ gem 'rest-client'
 # Job scheduler for Ruby (at, cron, in and every jobs).
 gem 'rufus-scheduler'
 
+gem 'rswag'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -71,6 +73,7 @@ group :development, :test do
   gem 'pry'
   gem 'factory_bot_rails', require: false
   gem 'database_cleaner'
+  gem 'rswag-specs'
 end
 
 group :development do
@@ -83,4 +86,3 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-

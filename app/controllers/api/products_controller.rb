@@ -6,7 +6,7 @@ class Api::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
-    if @product.save!
+    if @product.save
       render json: @product, :include => {
         :categories => { :only => %i[id name] }
       }, :except => %i[created_at updated_at], status: :created
@@ -16,7 +16,9 @@ class Api::ProductsController < ApplicationController
   end
 
   def update
-    if @product.update!(product_params)
+    if @product.blank?
+      render json: @product, status: :not_found
+    elsif @product.update(product_params)
       render json: @product, status: :ok
     else
       render json: @product.errors, status: :unprocessable_entity
@@ -24,7 +26,11 @@ class Api::ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy!
+    if @product.blank?
+      render json: @product, status: :not_found
+    else
+      @product.destroy!
+    end
   end
 
   private
