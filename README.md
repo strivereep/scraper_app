@@ -34,3 +34,18 @@ A simple web scraper app built using React on Rails with specs, that scrapes the
 
 ## SWAGGER API SPECS
 - `{url}/api-docs` to see the swagger api docs
+
+## DOCKER
+- Run `docker compose up`
+- On separate terminal, Run the following commands:
+    - `docker container ls`: lists all the containers
+    - `docker exec -it {postgres_container_id} /bin/sh`
+    - `su - postgres`
+    - `psql`
+    -  `CREATE USER {username} WITH PASSWORD '{password}';`
+    - `CREATE DATABASE {database_name};`
+    - `GRANT ALL PRIVILEGES ON DATABASE {database_name} to {username};`
+    - `ALTER DATABASE {database_name} OWNER TO {username};`
+    - This will create the database with the username and change the owner to the created user.
+    - Use the created database, username and password on file `database.yml`
+- On separate terminal, Run `docker compose exec app rails db:migrate` to run all the pending migrations.

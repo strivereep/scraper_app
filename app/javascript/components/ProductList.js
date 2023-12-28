@@ -27,7 +27,7 @@ ProductList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       url: PropTypes.string.isRequired,
-      price: PropTypes.number,
+      price: PropTypes.string,
       title: PropTypes.string,
       description: PropTypes.string,
       size: PropTypes.string,

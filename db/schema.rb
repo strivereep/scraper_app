@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_12_04_051651) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -46,8 +49,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_04_051651) do
   end
 
   create_table "categories_products", id: false, force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.integer "category_id", null: false
+    t.bigint "product_id", null: false
+    t.bigint "category_id", null: false
     t.index ["product_id", "category_id"], name: "index_categories_products_on_product_id_and_category_id"
   end
 
